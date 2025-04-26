@@ -127,7 +127,11 @@ class Logger {
       }
 
       if (_level === 'error') {
-        console.error(_levelDisp, _message);
+        if(!message.includes('ViewTagResolver | view: ')) {
+          console.log(_levelDisp, _message, "sfsf");
+        } else {
+          console.error(_levelDisp, _message);
+        }
       } else if (_level === 'warning') {
         console.warn(_levelDisp, _message);
       } else {
